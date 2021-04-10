@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Restaurante SIU</title>
+
+        <link rel="stylesheet" href="css/principal.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+        <style>
+            header {
+                position: sticky;
+                top: 0px;
+                z-index: 9999;
+                background-color: #d6282a;
+                box-shadow: 1px 1px 10px #000;
+            }
+
+            header a, a:hover, a:focus, a:active {
+                font-family: 'Roboto Slab', serif;
+                text-decoration: none;
+                color: #eee;
+            }
+
+            .hamburguerMenu {
+                position: absolute;
+                top: 1rem;
+                margin-left: 1rem;
+                display: flex;
+                width: 64px;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hamburguerMenu div{
+                background-color: #333;
+                border-radius: 5px;
+                width: 60%;
+                min-height: 5px;
+                margin: 3px;
+            }
+
+            #menu {
+                overflow: hidden;
+                max-height: 100vh;
+                transition: max-height .5s linear;
+            }
+
+            #menu.hidden {
+                max-height: 0px;
+                transition: max-height .5s linear;
+            }
+
+            header h1 {
+                font-weight: bolder;
+                margin: 0px 2rem;
+                padding: 1rem;
+                margin-left: 100px;
+            }
+
+            header nav ul {
+                list-style: none;
+                padding: 0px;
+            }
+
+            header nav ul li a {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 400;
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 1rem .5rem;
+                text-decoration: none;
+                color: #eee;
+                border-bottom: 1px solid #333;
+                transition: background-color 0.5s ease;
+            }
+
+            header nav ul li a:hover {
+                background-color: #d35d49;
+                transition: background-color 0.5s ease;
+            }
+
+            @media (min-width: 600px) {
+                
+                header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                header nav ul {
+                    display: flex;
+                    padding: 0px 1rem;
+                }
+
+                #menu.hidden {
+                    max-height: max-content;
+                }
+
+                #hmbttn {
+                    display: none;
+                }
+
+                header nav ul li a {
+                    border-bottom: none;
+                    padding: 1rem, 1.5rem;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <div class="hamburguerMenu" id="hmbttn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+    
+            <h1><a href="../principal/principal.html">Restaurante SIU</a></h1>
+    
+            <nav class="hidden" id="menu">
+                <ul>
+                    <li><a href="">Menú</a></li>
+                    <li><a href="">Contacto</a></li>
+                    <li><a href="../pedidos/pedidos.html">Pedidos</a></li>
+                    <li><a href="">Localización</a></li>
+                    <li><a href="">Misión y Visión</a></li>
+                    <li><a href="">Historia</a></li>
+                    <li><a href="">Fotos</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main>
+
+            <section class="bannerSIU">
+                <img alt="Letrero del logo SIU." src="img/siu.svg"/>
+            </section>
+
+            <section class="slider">
+                <section class="slideLens">
+                    <section class="slideTrail">
+
+                        <div class="slideFrame">
+                            <picture>
+                                <source srcset="img/slide1md.jpg" media="(min-width:640px" ) />
+                                <source srcset="img/slide1lg.jpg" media="(min-width:1025px)" />
+                                <img alt="Comida china en una mesa." src="img/slide1sm.jpg" />
+                            </picture>
+                            <h2 class="sliderTitle">Sabor tradicional</h2>
+                        </div>
+
+                        <div class="slideFrame">
+                            <picture>
+                                <source data-srcset="img/slide2lg.jpg" media="(min-width:1025px)" />
+                                <source data-srcset="img/slide2md.jpg" media="(min-width: 640px)" />
+                                <img alt="Mantel rojo con letras chinas." data-src="img/slide2sm.jpg" />
+                            </picture>
+                            <h2 class="sliderTitle">Experiencia única</h2>
+                        </div>
+
+                        <div class="slideFrame">
+                            <picture>
+                                <source data-srcset="img/slide3lg.jpg" media="(min-width:1025px)" />
+                                <source data-srcset="img/slide3md.jpg" media="(min-width: 640px)" />
+                                <img alt="Mesa con varios cubiertos chinos." data-src="img/slide3sm.jpg" />
+                            </picture>
+                            <h2 class="sliderTitle">SIU</h2>
+                        </div>
+                        
+                    </section>
+                </section>
+            </section>
+            <br/>
+
+            <h1>Comentarios</h1>
+
+            <section class="CardHolder">
+            
+                <section class="Card">
+                    <h3>Rosalinda</h3>
+                    
+                    <p>
+                        d los mejores restaurantes a los q he ido en mi vida :DDD
+                        muy recomendado
+                    </p>
+                    
+                    <form>
+                        <button>Like</button>
+                    </form>
+                    
+                </section>
+    
+                <section class="Card">
+                    <h3>Cárlos Pérez</h3>
+                    
+                    <p>
+                        Un menú bastante ámplio con una varidad de sabores, simplemente me encantó.
+                    </p>
+                    
+                    <form>
+                        <button>Like</button>
+                    </form>
+                    
+                </section>
+                
+                <section class="Card">
+                    <h3>juan</h3>
+                    
+                    <p>
+                        ta bien👍
+                        <br/>
+                        <br/>
+                        <br/>
+                    </p>
+                    
+                    <form>
+                        <button>Like</button>
+                    </form>
+                    
+                </section>
+    
+            </section>
+
+        </main>
+
+        <footer>
+            <em> Todos los Derechos Reservados &copy;</em>
+        </footer>
+
+        <script src="js/principal.js"></script>
+
+    </body>
+
+</html>

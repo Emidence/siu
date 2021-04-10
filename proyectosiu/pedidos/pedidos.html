@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Pedidos a Domicilio</title>
+        
+        <link rel="stylesheet" href="css/pedidos.css">
+
+        <style>
+            header {
+                position: sticky;
+                top: 0px;
+                z-index: 9999;
+                background-color: #d6282a;
+                box-shadow: 1px 1px 10px #000;
+            }
+
+            header a, a:hover, a:focus, a:active {
+                font-family: 'Roboto Slab', serif;
+                text-decoration: none;
+                color: #eee;
+            }
+
+            .hamburguerMenu {
+                position: absolute;
+                top: 1rem;
+                margin-left: 1rem;
+                display: flex;
+                width: 64px;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hamburguerMenu div{
+                background-color: #333;
+                border-radius: 5px;
+                width: 60%;
+                min-height: 5px;
+                margin: 3px;
+            }
+
+            #menu {
+                overflow: hidden;
+                max-height: 100vh;
+                transition: max-height .5s linear;
+            }
+
+            #menu.hidden {
+                max-height: 0px;
+                transition: max-height .5s linear;
+            }
+
+            header h1 {
+                font-weight: bolder;
+                margin: 0px 2rem;
+                padding: 1rem;
+                margin-left: 100px;
+            }
+
+            header nav ul {
+                list-style: none;
+                padding: 0px;
+            }
+
+            header nav ul li a {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 400;
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 1rem .5rem;
+                text-decoration: none;
+                color: #eee;
+                border-bottom: 1px solid #333;
+                transition: background-color 0.5s ease;
+            }
+
+            header nav ul li a:hover {
+                background-color: #d35d49;
+                transition: background-color 0.5s ease;
+            }
+
+            @media (min-width: 600px) {
+                
+                header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                header nav ul {
+                    display: flex;
+                    padding: 0px 1rem;
+                }
+
+                #menu.hidden {
+                    max-height: max-content;
+                }
+
+                #hmbttn {
+                    display: none;
+                }
+
+                header nav ul li a {
+                    border-bottom: none;
+                    padding: 1rem, 1.5rem;
+                }
+            }
+        </style>
+
+    </head>
+    
+    <body>
+        
+        <header>
+            <div class="hamburguerMenu" id="hmbttn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+    
+            <h1><a href="../principal/principal.html">Restaurante SIU</a></h1>
+    
+            <nav class="hidden" id="menu">
+                <ul>
+                    <li><a href="">Menú</a></li>
+                    <li><a href="">Contacto</a></li>
+                    <li><a href="../pedidos/pedidos.html">Pedidos</a></li>
+                    <li><a href="">Localización</a></li>
+                    <li><a href="">Misión y Visión</a></li>
+                    <li><a href="">Historia</a></li>
+                    <li><a href="">Fotos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <section class="bannerSIU">
+                <img alt="Letrero del logo SIU." src="img/siu.svg"/>
+            </section>
+
+            <h1>Pedidos a Domicilio</h1>
+
+            <fieldset>
+                <legend>Datos</legend>
+
+                <form action="pedidos.html" method="POST">
+                    
+                    <label for="txtNombrePedido">Nombre:&nbsp;</label><br/>
+                    <input class="inputFill" id="txtNombrePedido" name="txtNombrePedido" type="text"
+                        placeholder="Persona quien recibirá el pedido"/>
+                    <br/>
+    
+                    <label for="txtCorreoElectronico">Correo electrónico:&nbsp;</label><br/>
+                    <input class="inputFill" id="txtCorreoElectronico" name="txtCorreoElectronico" type="email"
+                        placeholder="Para mantenerte informado sobre tu pedido"/>
+                    <br/>
+    
+                    <label for="txtTelefono">Teléfono:&nbsp;</label><br/>
+                    <input class="inputFill" id="txtTelefono" name="txtTelefono" type="tel"
+                        placeholder="Para mantenerte informado sobre tu pedido"/>
+                    <br/>
+
+                    <label for="opcDescripcionPedido">Descripción del pedido:&nbsp;</label><br/>
+                    <textarea name="opcDescripcionPedido" cols="85" rows="10" placeholder="Todo lo que pedirá del menú"></textarea>
+                    <br/>
+                    
+                    <label>Salsas:&nbsp;</label><br/>
+                    
+                    <input type="checkbox" id="opcSalsaPescado" name="opcSalsas"/>
+                    <label for="opcSalsaPescado">Salsa de pescado</label>
+                    
+                    <input type="checkbox" id="opcSalsaOstras" name="opcSalsas"/>
+                    <label for="opcSalsaOstras">Salsa de ostras</label>
+                    
+                    <input type="checkbox" id="opcTeriyaki" name="opcSalsas"/>
+                    <label for="optTeriyaki">Teriyaki</label>
+                    
+                    <input type="checkbox" id="opcSatay" name="opcSalsas"/>
+                    <label for="opcSatay">Satay</label>
+                    
+                    <input type="checkbox" id="opcTonkatsu" name="opcSalsas"/>
+                    <label for="opcTonkatsu">Tonkatsu</label>
+                    
+                    <input type="checkbox" id="opcChileNormal" name="opcSalsas"/>
+                    <label for="optChileNormal">Chile normal</label>
+                    <br/>
+                    
+                    <label for="cmbBebida">Bebida:&nbsp;</label>
+                    <select form="cmbBebida" name="cmbBebida">
+                        <option value="Agua">Agua</option>
+                        <option value="RefrescoPepsi">Regresco (Pepsi)</option>
+                        <option value="Refresco7Up">Regresco (7Up)</option>
+                        <option value="JugoPina">Jugo de piña</option>
+                        <option value="JugoTamarindo">Jugo de tamarindo</option>
+                        <option value="JugoOrchata">Jugo de orchata</option>
+                        <option value="JugoNance">Jugo de nance</option>
+                    </select>
+                    <br/>
+
+                    <label>Ciudad:&nbsp;</label><br/>
+
+                    <input type="radio" id="opcTegucigalpa" value="TEG" name="opcCiudad"/>
+                    <label for="opcTegucigalpa">Tegucigalpa</label>
+
+                    <input type="radio" id="opcComayaguela" value="COM" name="opcCiudad"/>
+                    <label for="opcComayaguela">Comayagüela</label>
+                    <br/>
+
+                    <label for="opcDireccion">Dirección exacta:&nbsp;</label>
+                    <br/>
+                    <textarea name="txtDireccion" cols="85" rows="10" placeholder="Dirección exacta de su domicilio"></textarea>
+                    
+                </form>
+
+                <button type="submit" name="btnEnviar" value="ok">Enviar</button>
+
+            </fieldset>
+        </main>
+
+        <footer>
+            <em> Todos los Derechos Reservados &copy;</em>
+        </footer>
+
+        <script src="js/pedidos.js"></script>
+
+    </body>
+
+</html>
